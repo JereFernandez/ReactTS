@@ -40,7 +40,7 @@ const Form = ({ onNewSub }: FormProps) => {
                 <input onChange={handleChange} value={inputValues.subMonths} type="number" name="subMonths" placeholder="subMonths" />
                 <input onChange={handleChange} value={inputValues.avatar} type="text" name="avatar" placeholder="avatar" />
                 <textarea onChange={handleChange} value={inputValues.description} name="description" placeholder="description" />
-                <button type="button">Clear all</button>
+                <button type="button" onClick={handleClear}>Clear all</button>
                 <button type="submit">Save new sub!</button>
             </form>
         </div>
