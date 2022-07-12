@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 
 import "./App.css";
@@ -16,7 +17,9 @@ function App() {
 
   useEffect(() => {
     const fetchSubs = (): Promise<SubsResponseFromApi> => {
-      return fetch("http://localhost:3001/subs").then((res) => res.json());
+      //return fetch("http://localhost:3001/subs").then((res) => res.json());
+
+      return axios.get("http://localhost:3001/subs").then(response => response.data)
     };
 
     const mapFromApiToSubs = (apiResponse: SubsResponseFromApi): Array<Sub> => {
