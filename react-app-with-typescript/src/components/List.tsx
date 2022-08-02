@@ -2,6 +2,7 @@ import { Sub } from "../types"
 
 interface Props{
     subs: Array<Sub>
+    name?: string;
 }
 
 const List = ({subs}: Props) =>{
