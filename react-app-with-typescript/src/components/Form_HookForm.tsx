@@ -1,4 +1,5 @@
 import {useForm, SubmitHandler} from "react-hook-form";
+import { Sub } from "../types";
 
 
 interface IFormInput{
@@ -8,10 +9,14 @@ interface IFormInput{
     description: string
 }
 
-const Form_HookForm = () => {
+interface FormProps{
+    onNewSub: (newSub: Sub) => void
+}
+
+const Form_HookForm = ({ onNewSub }: FormProps) => {
 
     const { register, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+    const onSubmit: SubmitHandler<IFormInput> = data => onNewSub(data);
 
 
     return (
